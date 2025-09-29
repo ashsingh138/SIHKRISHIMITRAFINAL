@@ -1,0 +1,593 @@
+/* If using Tailwind, add this to your main CSS file */
+@import "tailwindcss";
+/* Import Tailwind's base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* A more fluid "fade-in-and-up" animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Keyframes for the animated gradient text */
+@keyframes background-pan {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* ==========================================
+  Component-Specific Styles
+==========================================
+*/
+
+/* Animated Gradient Text Utility */
+.animated-gradient-text {
+  @apply bg-gradient-to-r from-green-500 via-emerald-500 to-teal-400;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: background-pan 3s linear infinite;
+}
+
+/* Staggered Animation Logic */
+.stagger-in > * {
+  /* Set initial state for animation */
+  opacity: 0; 
+  /* Define the animation to be used */
+  animation: fade-in-up 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  /* Calculate delay using the --stagger-index variable from React */
+  animation-delay: calc(var(--stagger-index) * 100ms);
+}
+
+
+/* Interactive Card Hover Effects */
+.feature-card {
+  /* This class will be added to the FeatureCard component */
+  @apply transition-all duration-300 ease-in-out;
+  position: relative;
+  overflow: hidden; /* Needed for the pseudo-element */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  @apply shadow-2xl shadow-indigo-100;
+}
+
+/* Glowing border effect on hover */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem; /* Same as the card's rounded-lg */
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #4f46e5, #10b981) border-box;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+/* ==========================================
+  Homepage Enhancements
+==========================================
+*/
+
+/* Keyframes for a modern "blur-in" text effect */
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* We will reuse the .stagger-in class, but you can adjust it to use the new animation if you prefer */
+/* Example: .stagger-in-blur > * { animation-name: blur-in; ... } */
+
+
+/* Enhanced Call-to-Action button with a subtle glow */
+.cta-button {
+  @apply bg-green-500 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform shadow-lg flex items-center gap-2 mx-auto;
+  /* Adds a soft glow matching the button color */
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5); 
+}
+
+.cta-button:hover {
+  @apply bg-green-400;
+  /* Makes the button lift and the glow more intense on hover */
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.8);
+}
+
+/* ==========================================
+  Page Transitions
+==========================================
+*/
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+/* Add this to src/index.css */
+
+/* ... (keep your existing styles like tailwind imports) ... */
+
+/* Glassmorphism style for the cards */
+.flow-box {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    position: absolute;
+    z-index: 10;
+}
+
+.flow-box.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.flow-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-color: #0ea5e9; /* border-sky-500 */
+    z-index: 20;
+}
+
+.actor-box {
+    background-color: rgba(239, 246, 255, 0.8); /* bg-blue-50 with opacity */
+    border: 1px solid #dbeafe; /* border-blue-200 */
+    border-radius: 9999px; /* rounded-full */
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-stack {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    color: #4b5563; /* text-gray-600 */
+}
+
+.objective {
+    font-size: 0.9rem;
+    color: #374151; /* text-gray-700 */
+}
+
+.core-feature {
+    font-size: 0.85rem;
+    color: #0369a1; /* text-sky-700 */
+    background-color: #e0f2fe; /* bg-sky-100 */
+    padding: 4px 10px;
+    border-radius: 9999px;
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.connector-line {
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    background: linear-gradient(to bottom, #dbeafe, #a5b4fc);
+    z-index: 1;
+}
+
+.connector-dot {
+    position: absolute;
+    left: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 3px solid #60a5fa; /* border-blue-400 */
+    transform: translateX(-50%);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.connector-dot.is-active {
+    box-shadow: 0 0 15px 3px #60a5fa;
+}
+
+.arrow {
+    stroke: #9ca3af; /* stroke-gray-400 */
+    stroke-width: 2.5;
+    fill: none;
+    marker-end: url(#arrowhead);
+    opacity: 0;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95), opacity 0.5s ease;
+}
+
+.arrow.is-visible {
+    opacity: 1;
+    stroke-dashoffset: 0;
+}
+
+/* Add this to src/index.css */
+
+/* --- Styles for Crop Advisory Flowchart --- */
+@keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.flowchart-dark-background {
+    font-family: 'Inter', sans-serif;
+    background-color: #0B1120;
+    color: #cbd5e1;
+    background-image: radial-gradient(ellipse at top, #1e3a8a, transparent 60%),
+                      radial-gradient(ellipse at bottom, #4c1d95, transparent 70%);
+    background-size: 250% 250%;
+    animation: aurora 20s ease-in-out infinite;
+    overflow-x: hidden;
+    padding: 2rem;
+}
+
+.flow-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid #1e293b;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.flow-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.flow-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7);
+    border-color: #a78bfa;
+}
+
+.section-title {
+    color: #f1f5f9;
+    font-weight: 700;
+}
+
+.tech-tag {
+    display: inline-block;
+    background-color: #1e293b;
+    color: #94a3b8;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    margin: 2px;
+}
+.data-point {
+    background: #1e40af;
+    color: #bfdbfe;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin: 0 2px;
+    display: inline-block;
+}
+.arrow {
+    stroke-width: 3px;
+    fill: none;
+    marker-end: url(#arrowhead-dark); /* Unique ID for this arrowhead */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.arrow-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+.arrow.is-visible {
+    opacity: 1;
+}
+.arrow.is-visible .arrow-path {
+    animation: draw-arrow 1.5s ease forwards;
+}
+@keyframes draw-arrow {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Add this to src/index.css */
+
+/* --- Styles for Pest Detection Flowchart --- */
+.flow-node {
+    position: absolute;
+    width: 280px;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    z-index: 10;
+}
+
+.flow-node.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.node-user { background-color: #e0f2fe; border-left: 5px solid #0ea5e9; } /* sky-100/500 */
+.node-device { background-color: #f0fdf4; border-left: 5px solid #22c55e; } /* green-50/500 */
+.node-server { background-color: #fefce8; border-left: 5px solid #eab308; } /* yellow-50/500 */
+.node-decision { background-color: #faf5ff; border-left: 5px solid #9333ea; } /* purple-50/700 */
+.node-output { background-color: #fff7ed; border-left: 5px solid #f97316; } /* orange-50/500 */
+.node-feedback { background-color: #f1f5f9; border-left: 5px solid #64748b; } /* slate-100/500 */
+
+.connector-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    z-index: 5;
+}
+
+.arrow-path {
+    stroke: #94a3b8; /* slate-400 */
+    stroke-width: 2.5;
+    fill: none;
+    marker-end: url(#arrowhead-pest); /* Unique ID for this arrowhead */
+    opacity: 0;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.3s, opacity 0.5s ease 0.3s;
+}
+
+.arrow-path.is-visible {
+    opacity: 1;
+    stroke-dashoffset: 0;
+}
+
+/* Add this to src/index.css */
+
+/* --- Styles for Spectral Crop Health Flowchart --- */
+@keyframes arrow-flow {
+    0% { background-position: 0 0; }
+    100% { background-position: -60px 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.fade-in-element {
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: translateY(20px);
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animated-arrow {
+    height: 100px;
+    width: 8px;
+    margin: 20px auto;
+    background: linear-gradient(45deg, rgba(255,255,255,0.3) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.3) 75%, transparent 75%, transparent);
+    background-size: 30px 30px;
+    background-color: #4f46e5;
+    animation: arrow-flow 1.5s linear infinite;
+    border-radius: 4px;
+}
+
+.spectral-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.spectral-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    animation: pulse 2.5s infinite;
+}
+
+.formula-card {
+    font-family: 'Courier New', Courier, monospace;
+    background: #1e293b;
+    color: #a7f3d0;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Add this to src/index.css */
+
+/* --- Styles for Blockchain Traceability Flowchart --- */
+@keyframes write-in {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.blockchain-card {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-left-width: 4px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.blockchain-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-line {
+  position: absolute;
+  left: 32px; /* Center of the icon */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+.timeline-icon-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc; /* bg-slate-50 */
+  border-radius: 9999px;
+  border: 4px solid white;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.blockchain-card:hover .timeline-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.data-log-entry {
+  overflow: hidden;
+  white-space: nowrap;
+  animation-delay: 0.5s;
+  animation-duration: 0.8s;
+  animation-timing-function: steps(30, end);
+  animation-fill-mode: forwards;
+}
+
+.blockchain-card.is-visible .data-log-entry {
+  animation-name: write-in;
+}
+
+/* Add this to src/index.css */
+
+/* --- Styles for Market Price Flowchart --- */
+@keyframes brain-pulse {
+  0% { background-position: 0% 50%; box-shadow: 0 0 20px #6366f1; }
+  50% { background-position: 100% 50%; box-shadow: 0 0 35px #818cf8; }
+  100% { background-position: 0% 50%; box-shadow: 0 0 20px #6366f1; }
+}
+
+.market-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.market-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.market-arrow {
+  opacity: 0;
+  transform: scaleY(0.5);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transform-origin: top;
+}
+
+.market-arrow.is-visible {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.ml-engine-card {
+  background: linear-gradient(-45deg, #4338ca, #6366f1, #312e81, #4f46e5);
+  background-size: 400% 400%;
+  animation: brain-pulse 10s ease infinite;
+}
+/* Add this to src/index.css */
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(99, 102, 241, 0);
+  }
+}
+
+.call-to-action-pulse {
+  animation: subtle-pulse 2.5s infinite;
+}
