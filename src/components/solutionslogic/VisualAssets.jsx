@@ -115,7 +115,7 @@ const assetData = [
                     <td className="p-3 font-medium">Random Forest Classifier</td>
                     <td className="p-3">Crop Recommendation</td>
                     <td className="p-3">Accuracy</td>
-                    <td className="p-3 font-bold text-green-600">&gt ;95%</td>
+                    <td className="p-3 font-bold text-green-600">&gt;95%</td>
                 </tr>
                 <tr className="border-t">
                     <td className="p-3 font-medium">Fine-tuned LLM (BERT-based)</td>
