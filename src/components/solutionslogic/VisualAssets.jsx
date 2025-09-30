@@ -73,6 +73,12 @@ const assetData = [
     src: '/images/architecture/Crophealth1.png'
   },
   {
+    type: 'image',
+    title: 'Pest/Disease Detection',
+   
+    src: '/images/architecture/pest2.jpg'
+  },
+  {
     type: 'table',
     title: 'Key Findings & Model Performance',
     description: 'A summary of the performance metrics for our core AI/ML models based on validation datasets.',
