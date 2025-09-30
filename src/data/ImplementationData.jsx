@@ -9,7 +9,8 @@ import BlockchainTraceability from '../components/solutionslogic/BlockChainTraca
 import MarketPriceFlowchart from '../components/solutionslogic/MarketPricePrediction';
 import YieldPredictionFlowchart from '../components/solutionslogic/YieldPredictionFlowChart';
 import CodeSnippetGallery from '../components/implementation/CodeSnippetGallery'; // NEW: Import the gallery
-
+import SoilWeatherIntelligence from '../components/solutionslogic/SoilWeatherIntelligence'; // NEW: Import the new component
+import QueryBotFlowchart from '../components/solutionslogic/QueryBotFlowChart'; // NEW: Import the new component
 export const implementationData = [
   {
     id: 'crop-advisory',
@@ -61,6 +62,26 @@ export const implementationData = [
     modalContent: { type: 'component', component: <YieldPredictionFlowchart /> }
   },
   {
+    id: 'soil-weather', // Add a unique ID
+    title: 'Soil & Weather Intelligence',
+    icon: 'cloud-sun', // A more fitting icon
+    description: 'A dual-pipeline system for generating soil health cards and hyper-local weather alerts.',
+    modalContent: {
+      type: 'component', // 2. UPDATE THE MODAL CONTENT
+      component: <SoilWeatherIntelligence />,
+    }
+  },
+    {
+    id: 'query-support', // Add a unique ID
+    title: 'Smart Query Support',
+    icon: 'message-square',
+    description: 'A tiered system combining AI, human experts, and community help.',
+    modalContent: {
+      type: 'component', // 2. UPDATE THE MODAL CONTENT
+      component: <QueryBotFlowchart />,
+    }
+  },
+  {
     id: 'code-snippets', // REPLACED tech-stack with this new item
     title: 'Code  & Output Snippets',
     icon: 'code',
@@ -70,4 +91,5 @@ export const implementationData = [
       component: <CodeSnippetGallery />,
     }
   },
+   
 ];

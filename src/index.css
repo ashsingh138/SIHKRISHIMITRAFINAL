@@ -591,3 +591,43 @@ html {
 .call-to-action-pulse {
   animation: subtle-pulse 2.5s infinite;
 }
+
+/* Add this to src/index.css */
+
+/* --- Styles for Soil & Weather Flowchart --- */
+.flow-bg-pattern {
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-size: 16px 16px;
+}
+
+
+/* Add this to src/index.css */
+
+/* --- Styles for Query Bot Flowchart --- */
+.query-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.query-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.connector {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: #cbd5e1; /* slate-300 */
+}
+.connector-path {
+  stroke: #cbd5e1; /* slate-300 */
+  stroke-width: 2px;
+  fill: none;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1s ease-out;
+}
+.connector-path.is-visible {
+  stroke-dashoffset: 0;
+}
