@@ -10,6 +10,7 @@ import ImplementationTab from './tabs/ImplementationTab';
 import ResourcesTab from './tabs/ResourcesTab';
 import ArchitectureTab from './tabs/ArchitectureTab';
 import Footer from './components/Footer';
+import TeamTab from './tabs/TeamTab';
 import { Menu, X } from 'lucide-react'; // NEW: Import icons for the hamburger menu
 
 const TABS = {
@@ -19,7 +20,8 @@ const TABS = {
     SCREENS: 'Mobile App & Screens',
     VIDEO: 'Prototype Video',
     IMPLEMENTATION: 'Full Implementation Logic',
-    RESOURCES: 'Resources & References'
+    RESOURCES: 'Resources & References',
+    TEAM: 'Team',
 };
 
 const TAB_COMPONENTS = {
@@ -30,6 +32,7 @@ const TAB_COMPONENTS = {
     [TABS.VIDEO]: VideoTab,
     [TABS.IMPLEMENTATION]: ImplementationTab,
     [TABS.RESOURCES]: ResourcesTab,
+    [TABS.TEAM]: TeamTab,
 };
 
 export default function App() {
