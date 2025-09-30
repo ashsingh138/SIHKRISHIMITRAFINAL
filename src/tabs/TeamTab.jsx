@@ -47,7 +47,7 @@ const TeamTab = () => {
   return (
     <div className="p-8 md:p-12 bg-slate-50">
       <header className="text-center mb-16">
-        <h2 className="text-4xl font-bold animated-gradient-text">The Techno Wizards</h2>
+        <h2 className="text-4xl font-bold animated-gradient-text">The TechnoWizards</h2>
         <p className="text-slate-600 max-w-3xl mx-auto mt-4 text-xl">
           From the Indian Institute of Technology Kharagpur
         </p>
