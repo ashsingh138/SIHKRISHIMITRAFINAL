@@ -9,8 +9,10 @@ import BlockchainTraceability from '../components/solutionslogic/BlockChainTraca
 import MarketPriceFlowchart from '../components/solutionslogic/MarketPricePrediction';
 import YieldPredictionFlowchart from '../components/solutionslogic/YieldPredictionFlowChart';
 import CodeSnippetGallery from '../components/implementation/CodeSnippetGallery'; // NEW: Import the gallery
-import SoilWeatherIntelligence from '../components/solutionslogic/SoilWeatherIntelligence'; // NEW: Import the new component
-import QueryBotFlowchart from '../components/solutionslogic/QueryBotFlowChart'; // NEW: Import the new component
+import SoilWeatherIntelligence from '../components/solutionslogic/SoilWeatherIntelligence';
+import QueryBotFlowchart from '../components/solutionslogic/QueryBotFlowChart';
+import TechStackDetails from '../components/solutionslogic/TechStackDetails'; // NEW: Import Tech Stack
+import VisualAssets from '../components/solutionslogic/VisualAssets'; 
 export const implementationData = [
   {
     id: 'crop-advisory',
@@ -71,7 +73,7 @@ export const implementationData = [
       component: <SoilWeatherIntelligence />,
     }
   },
-    {
+  {
     id: 'query-support', // Add a unique ID
     title: 'Smart Query Support',
     icon: 'message-square',
@@ -91,5 +93,18 @@ export const implementationData = [
       component: <CodeSnippetGallery />,
     }
   },
-   
+  {
+    id: 'tech-stack',
+    title: 'Tech Stack & Datasets',
+    icon: 'layers',
+    description: 'A detailed breakdown of the technologies, APIs, and data sources we use.',
+    modalContent: { type: 'component', component: <TechStackDetails /> }
+  },
+  {
+    id: 'visual-assets',
+    title: 'Diagrams & Findings',
+    icon: 'image',
+    description: 'View our system architecture diagrams and key model performance metrics.',
+    modalContent: { type: 'component', component: <VisualAssets /> }
+  },
 ];
