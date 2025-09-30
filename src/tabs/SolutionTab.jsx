@@ -9,7 +9,8 @@ const SolutionTab = () => {
         { title: "Yield Prediction", icon: "bar-chart-2", illustration: "/images/features/farmer/Yield.png", content: ["Forecast yield and profit margins using ML and your input data."], infographic: { value: "±5% Margin", label: "Forecast Accuracy" } },
         { title: "Soil & Weather Intelligence", icon: "cloud-sun", illustration:  "/images/features/farmer/Soil&Weather.png", content: ["Real-time soil health via SoilGrids, Bhuvan, or connected IoT sensors.", "Localized weather alerts for rain, drought, and pest risk."] },
         { title: "Pest/Disease Detection", icon: "bug", illustration:"/images/features/farmer/disease.png" , content: ["Upload plant images for instant AI diagnosis.", "Receive disease hotspot warnings from satellite and officer inputs."], infographic: { value: "97% Accuracy", label: "Diagnosis Model" } },
-        { title: "Market & Blockchain Traceability", icon: "qr-code", illustration: "/images/features/farmer/Price.png", content: ["Live Mandi prices from the Agmarknet API.", "Generate a QR code for produce to ensure farm-to-fork traceability."] },
+       { title: "Market Price Prediction & Selling Suggestions", icon: "qr-code", illustration: "/images/features/farmer/Price.png", content: [" Mandi prices prediction and selling suggestions to ensure profit for farmers and higher income"] },
+             {title:"Blockchain-based Supply Chain Traceability", icon:"shield-check", illustration:"/images/features/farmer/Blockchain.png", content:["Generate QR codes for your produce to ensure transparency and trust.", "Enable retailers and consumers to verify origin, quality, and pricing history through blockchain-backed records."]},
         { title: "Query Support", icon: "message-square", illustration: "/images/features/farmer/Query.png", content: ["Ask questions via text, voice, or image.", "Get answers from our AI or trusted local 'Power Farmers'.", "Unresolved cases are escalated to an officer."] },
         { title: "Digital Companion Mode", icon: "book-marked", illustration: "/images/features/farmer/Digital.png", content: ["Automatically log activities with phone sensors and simple confirmations.", "AI learns your history to give proactive advice (e.g., 'Rain expected, delay spraying')."] },
         { title: "Gamified Sustainability", icon: "award", illustration: "/images/features/farmer/Sustainabilty.png", content: ["Complete 'missions' for sustainable practices.", "Earn badges, sustainability scores, and rank on a community leaderboard."] },
@@ -32,9 +33,19 @@ const SolutionTab = () => {
         { title: "Yield & Disease Engines", icon: "bar-chart-2", illustration: "/images/yield.jpeg", content: ["Uses LSTMs and CNNs to forecast yield and detect diseases from images."] },
         { title: "Farmer Query Bot", icon: "message-square", illustration: "/images/chat.jpeg", content: ["A multilingual NLP bot that understands and answers farmer queries."] },
         { title: "Spectral Intelligence Engine", icon: "satellite", illustration: "/images/band.png", content: ["Fuses Sentinel-2/Landsat and IoT data to compute NDVI, NDMI, and stress maps."] },
-        { title: "Companion & Gamification Engines", icon: "award", illustration: "/images/Gamification.png", content: ["Learns from farmer logs to provide nudges and manage the reward system."] }
-    ];
+        { title: "Companion & Gamification Engines", icon: "award", illustration: "/images/Gamification.png", content: ["Learns from farmer logs to provide nudges and manage the reward system."] },
+       { 
+    title: "Blockchain-based Supply Chain Engine", 
+    icon: "shield-check", 
+    illustration: "/images/blockchain.jpeg", 
+    content: [
+        "Implements a distributed ledger (Hyperledger / Ethereum-based) for immutable crop transactions.", 
+        "Generates unique blockchain-backed QR codes linked to farmer, crop, and mandi records.", 
+        "Verifies authenticity, prevents fraudulent claims, and enables transparent farm-to-fork traceability."
+    ] 
+},
 
+    ];
     return (
         <div className="p-4 md:p-8 bg-slate-100">
             <header className="text-center mb-12">

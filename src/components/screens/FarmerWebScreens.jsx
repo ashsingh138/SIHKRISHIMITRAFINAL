@@ -30,6 +30,12 @@ const FarmerWebScreens = () => {
         description: "Track live mandi prices, view future price predictions, and get intelligent recommendations on the best time to sell your produce.",
         image: "/images/features/farmer/Price.png"
     },
+   {
+    title: "Blockchain-based Supply Chain Traceability",
+    description: "Ensure full transparency and trust with blockchain-backed records. Farmers can generate QR codes for their produce, enabling retailers and consumers to verify origin, quality, and pricing history.",
+    image: "/images/features/farmer/Blockchain.png"
+},
+
     {
         title: "Query & Community Support",
         description: "Get instant answers from our AI, ask questions in the community forum, and escalate complex issues directly to an agricultural officer.",

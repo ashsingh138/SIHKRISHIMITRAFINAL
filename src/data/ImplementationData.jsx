@@ -3,7 +3,7 @@ import React from 'react';
 // CORRECTED: Import paths now point to your 'solutionslogic' folder
 import GamificationFlowchart from '../components/solutionslogic/GamificationFlowChart';
 import CropAdvisoryFlowchart from '../components/solutionslogic/CropAdvisoryFlowChart';
-import PestDetectionFlowChart from '../components/solutionslogic/PestDetectionFlowChart';
+import PestDetectionFlowchart from '../components/solutionslogic/PestDetectionFlowChart';
 import SpectralCropHealth from '../components/solutionslogic/SpectralCropHealth';
 import BlockchainTraceability from '../components/solutionslogic/BlockChainTracability';
 import MarketPriceFlowchart from '../components/solutionslogic/MarketPricePrediction';
@@ -13,7 +13,7 @@ import SoilWeatherIntelligence from '../components/solutionslogic/SoilWeatherInt
 import QueryBotFlowchart from '../components/solutionslogic/QueryBotFlowChart';
 import TechStackDetails from '../components/solutionslogic/TechStackDetails'; // NEW: Import Tech Stack
 import VisualAssets from '../components/solutionslogic/VisualAssets'; 
-export const implementationData = [
+export const interactiveFlowsData = [
   {
     id: 'crop-advisory',
     title: 'Crop Advisory Engine',
@@ -26,20 +26,27 @@ export const implementationData = [
     title: 'Pest & Disease Detection',
     icon: 'bug',
     description: 'A CNN model to identify plant diseases from leaf images.',
-    modalContent: { type: 'component', component: <PestDetectionFlowChart /> }
+    modalContent: { type: 'component', component: <PestDetectionFlowchart /> }
+  },
+   {
+    id: 'yield-prediction',
+    title: 'Yield Prediction Engine',
+    icon: 'bar-chart-2',
+    description: 'A hybrid ML system for forecasting crop yield and profit margins.',
+    modalContent: { type: 'component', component: <YieldPredictionFlowchart /> }
   },
   {
-    id: 'gamification',
-    title: 'Gamified Sustainability',
-    icon: 'award',
-    description: 'Interactive flowchart detailing the system for encouraging sustainable practices.',
-    modalContent: { type: 'component', component: <GamificationFlowchart /> }
+    id: 'market-price',
+    title: 'Market Price Intelligence',
+    icon: 'trending-up',
+    description: 'An ML model for price forecasting and selling suggestions.',
+    modalContent: { type: 'component', component: <MarketPriceFlowchart /> }
   },
   {
     id: 'spectral-analysis',
     title: 'Spectral Analysis Engine',
     icon: 'satellite',
-    description: 'Processes Sentinel-2 satellite imagery to calculate NDVI for crop health.',
+    description: 'Processes Sentinel-2 imagery to calculate NDVI for crop health.',
     modalContent: { type: 'component', component: <SpectralCropHealth /> }
   },
   {
@@ -50,61 +57,49 @@ export const implementationData = [
     modalContent: { type: 'component', component: <BlockchainTraceability /> }
   },
   {
-    id: 'market-price',
-    title: 'Market Price Intelligence',
-    icon: 'trending-up',
-    description: 'An ML model for price forecasting and selling suggestions.',
-    modalContent: { type: 'component', component: <MarketPriceFlowchart /> }
-  },
-  {
-    id: 'yield-prediction',
-    title: 'Yield Prediction Engine',
-    icon: 'bar-chart-2',
-    description: 'A hybrid ML system for forecasting crop yield and profit margins.',
-    modalContent: { type: 'component', component: <YieldPredictionFlowchart /> }
-  },
-  {
-    id: 'soil-weather', // Add a unique ID
-    title: 'Soil & Weather Intelligence',
-    icon: 'cloud-sun', // A more fitting icon
-    description: 'A dual-pipeline system for generating soil health cards and hyper-local weather alerts.',
-    modalContent: {
-      type: 'component', // 2. UPDATE THE MODAL CONTENT
-      component: <SoilWeatherIntelligence />,
-    }
-  },
-  {
-    id: 'query-support', // Add a unique ID
+    id: 'query-support',
     title: 'Smart Query Support',
     icon: 'message-square',
     description: 'A tiered system combining AI, human experts, and community help.',
-    modalContent: {
-      type: 'component', // 2. UPDATE THE MODAL CONTENT
-      component: <QueryBotFlowchart />,
-    }
+    modalContent: { type: 'component', component: <QueryBotFlowchart /> }
   },
   {
-    id: 'code-snippets', // REPLACED tech-stack with this new item
-    title: 'Code  & Output Snippets',
-    icon: 'code',
-    description: 'View key code and output snippets.',
-    modalContent: {
-      type: 'component',
-      component: <CodeSnippetGallery />,
-    }
+    id: 'soil-weather',
+    title: 'Soil & Weather Intelligence',
+    icon: 'cloud-sun',
+    description: 'A dual-pipeline for soil health cards and hyper-local weather alerts.',
+    modalContent: { type: 'component', component: <SoilWeatherIntelligence /> }
   },
   {
-    id: 'tech-stack',
-    title: 'Tech Stack & Datasets',
-    icon: 'layers',
-    description: 'A detailed breakdown of the technologies, APIs, and data sources we use.',
-    modalContent: { type: 'component', component: <TechStackDetails /> }
+    id: 'gamification',
+    title: 'Gamified Sustainability',
+    icon: 'award',
+    description: 'Interactive flowchart detailing our system for encouraging sustainable practices.',
+    modalContent: { type: 'component', component: <GamificationFlowchart /> }
   },
-  {
-    id: 'visual-assets',
-    title: 'Diagrams & Findings',
-    icon: 'image',
-    description: 'View our system architecture diagrams and key model performance metrics.',
-    modalContent: { type: 'component', component: <VisualAssets /> }
-  },
+];
+
+// --- ARRAY 2: For the "Assets & Resources" section ---
+export const technicalAssetsData = [
+    {
+        id: 'code-snippets',
+        title: 'Code & Output Snippets',
+        icon: 'code',
+        description: 'View key code and output snippets from our backend and AI models.',
+        modalContent: { type: 'component', component: <CodeSnippetGallery /> }
+    },
+    {
+        id: 'tech-stack',
+        title: 'Tech Stack & Datasets',
+        icon: 'layers',
+        description: 'A detailed breakdown of the technologies, APIs, and data sources we use.',
+        modalContent: { type: 'component', component: <TechStackDetails /> }
+    },
+    {
+        id: 'visual-assets',
+        title: 'Diagrams & Findings',
+        icon: 'image',
+        description: 'View our system architecture diagrams and key model performance metrics.',
+        modalContent: { type: 'component', component: <VisualAssets /> }
+    },
 ];
