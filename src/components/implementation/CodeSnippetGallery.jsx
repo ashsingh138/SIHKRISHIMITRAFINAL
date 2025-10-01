@@ -7,6 +7,7 @@ const snippets = [
   { title: "Spectral Crop Health Map code", src: "/images/code/SpectralCropHealth.png" },
   { title: "Spectral Output", src: "/images/code/SpectralCrophealthoutput.png" },
   { title: "Yield Prediction  Democode", src: "/images/code/YieldPrediction.png" },
+  { title: "Smart Crop Advisory Democode", src: "/images/code/Cropadvisory.png" },
   { title: "Yield Prediction Democode", src: "/images/code/yield2.png" },
   { title: "Market Price Prediction Democode", src: "/images/code/Price1.png" },
   { title: "Market Price Prediction Democode", src: "/images/code/Price2.png" },
