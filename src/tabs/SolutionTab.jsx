@@ -14,7 +14,9 @@ const SolutionTab = () => {
         { title: "Query Support", icon: "message-square", illustration: "/images/features/farmer/Query.png", content: ["Ask questions via text, voice, or image.", "Get answers from our AI or trusted local 'Power Farmers'.", "Unresolved cases are escalated to an officer."] },
         { title: "Digital Companion Mode", icon: "book-marked", illustration: "/images/features/farmer/Digital.png", content: ["Automatically log activities with phone sensors and simple confirmations.", "AI learns your history to give proactive advice (e.g., 'Rain expected, delay spraying')."] },
         { title: "Gamified Sustainability", icon: "award", illustration: "/images/features/farmer/Sustainabilty.png", content: ["Complete 'missions' for sustainable practices.", "Earn badges, sustainability scores, and rank on a community leaderboard."] },
-        { title: "Spectral Crop Health Maps", icon: "satellite", illustration:  "/images/features/farmer/Spectral.png", content: ["View simple NDVI/EVI maps showing crop vigor and water stress.", "Compare field health before and after taking action."] }
+        { title: "Spectral Crop Health Maps", icon: "satellite", illustration:  "/images/features/farmer/Spectral.png", content: ["View simple NDVI/EVI maps showing crop vigor and water stress.", "Compare field health before and after taking action."] },
+        { title: "Multilingual-Regional language Support", icon: "globe", illustration: "/images/features/farmer/Regional.png", content: ["App available in many Indian languages with voice input/output.", "Region-specific advice considering local crops, pests, and practices."] },
+        {title:"Video Tutorials,App guide,Profile and notification management,offline functionality", icon:"video", illustration:"/images/features/farmer/features.png", content:["Access a library of video tutorials for best practices.","Manage your profile and notifications easily.","Use key features offline with data syncing when online."]}
     ];
 
     // RESTORED: The complete list of 6 officer features

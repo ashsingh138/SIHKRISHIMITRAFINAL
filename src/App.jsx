@@ -11,6 +11,7 @@ import ResourcesTab from './tabs/ResourcesTab';
 import ArchitectureTab from './tabs/ArchitectureTab';
 import Footer from './components/Footer';
 import TeamTab from './tabs/TeamTab';
+import StrategyAndImpact from './tabs/StrategyAndImpact';
 import { Menu, X } from 'lucide-react'; // NEW: Import icons for the hamburger menu
 
 const TABS = {
@@ -20,6 +21,7 @@ const TABS = {
     SCREENS: 'Mobile App & Screens',
     VIDEO: 'Prototype Video',
     IMPLEMENTATION: 'Full Implementation Logic',
+    STRATEGY:'Strategy,Viability & Impact',
     RESOURCES: 'Resources & References',
     TEAM: 'Team',
 };
@@ -31,6 +33,7 @@ const TAB_COMPONENTS = {
     [TABS.SCREENS]: ScreensTab,
     [TABS.VIDEO]: VideoTab,
     [TABS.IMPLEMENTATION]: ImplementationTab,
+    [TABS.STRATEGY]: StrategyAndImpact,
     [TABS.RESOURCES]: ResourcesTab,
     [TABS.TEAM]: TeamTab,
 };
