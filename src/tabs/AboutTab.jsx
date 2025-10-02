@@ -109,7 +109,7 @@ const AboutTab = ({ onNavigate, TABS }) => {
               <img src="/images/floods.jpg" alt="Flood impact" className="rounded-lg mb-4 w-full h-40 object-cover"/>
               <p className="text-slate-700">Heavy rain damages 273 hectares of crops — <span className="font-bold">The Times of India</span></p>
             </a>
-            <a href="https://www.downtoearth.org.in/" target="_blank" rel="noreferrer"
+            <a href="https://share.google/RQAVescoDvP6IYWrB" target="_blank" rel="noreferrer"
               className="bg-white rounded-lg p-6 shadow hover:shadow-lg transition transform hover:-translate-y-1">
               <img src="/images/pests.jpeg" alt="Pests" className="rounded-lg mb-4 w-full h-40 object-cover"/>
               <p className="text-slate-700">Pests multiplying faster in a warming world — <span className="font-bold">DownToEarth</span></p>

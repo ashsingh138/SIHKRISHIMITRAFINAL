@@ -13,10 +13,11 @@ import Footer from './components/Footer';
 import TeamTab from './tabs/TeamTab';
 import StrategyAndImpact from './tabs/StrategyAndImpact';
 import OurApproachTab from './tabs/OurApproachTab';
+import ExecutiveSummary from './tabs/ExecutiveSummary';
 import { Menu, X } from 'lucide-react'; // NEW: Import icons for the hamburger menu
 
 const TABS = {
-    ABOUT: 'About',
+    ABOUT: 'Why It Matters',
     SOLUTION: 'Solution',
     ARCHITECTURE:'System Architecture',
     SCREENS: 'Mobile App & Screens',
@@ -24,6 +25,7 @@ const TABS = {
     IMPLEMENTATION: 'Full Implementation Logic',
     STRATEGY:'Strategy,Viability & Impact',
     APPROACH: 'Our Approach',
+     EXECUTIVE_SUMMARY: 'Executive Summary',
     RESOURCES: 'Resources & References',
     TEAM: 'Team',
 };
@@ -37,6 +39,7 @@ const TAB_COMPONENTS = {
     [TABS.IMPLEMENTATION]: ImplementationTab,
     [TABS.STRATEGY]: StrategyAndImpact,
      [TABS.APPROACH]: OurApproachTab,
+      [TABS.EXECUTIVE_SUMMARY]: ExecutiveSummary,
     [TABS.RESOURCES]: ResourcesTab,
     [TABS.TEAM]: TeamTab,
 };
