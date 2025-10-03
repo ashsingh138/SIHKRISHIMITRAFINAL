@@ -15,6 +15,10 @@ import TechStackDetails from '../components/solutionslogic/TechStackDetails'; //
 import VisualAssets from '../components/solutionslogic/VisualAssets'; 
 import DigitalCompanion from '../components/solutionslogic/DigitalCompanion'; // NEW: Import Digital Companion
 import ServicesFlow from '../components/solutionslogic/ServicesFlow'; // NEW: Import Services Flow
+import QueryManagementFlowchart from '../components/solutionslogic/QueryManagementFlowChart'; // NEW: Import Query Management Flowchart
+import OutbreakMonitoring from '../components/solutionslogic/OutbreakMonitoring'; // NEW: Import Outbreak Monitoring
+import RegionalAnalyticsFlowchart from '../components/solutionslogic/RegionalAnalyticsFlowchart'; // NEW: Import Regional Analytics Flowchart
+import SchemeAndAlerts from '../components/solutionslogic/SchemeAndAlerts'; // NEW: Import Scheme and Alerts Flowchart
 export const interactiveFlowsData = [
   {
     id: 'crop-advisory',
@@ -97,6 +101,46 @@ export const interactiveFlowsData = [
     modalContent: {
       type: 'component', // 2. UPDATE THE MODAL CONTENT
       component: <ServicesFlow />,
+    }
+  },
+   {
+    id: 'query-management', // Add a unique ID
+    title: 'Farmer Query Management',
+    icon: 'inbox',
+    description: 'The workflow for escalating and resolving farmer queries with expert oversight.',
+    modalContent: {
+      type: 'component', // 2. ADD THE COMPONENT TO THE MODAL
+      component: <QueryManagementFlowchart />,
+    }
+  },
+  {
+    id: 'outbreak-monitoring', // Add a unique ID
+    title: 'Outbreak Monitoring Dashboard',
+    icon: 'siren',
+    description: 'How officers use a live heatmap to track outbreaks and issue targeted advisories.',
+    modalContent: {
+      type: 'component', // 2. ADD THE COMPONENT TO THE MODAL
+      component: <OutbreakMonitoring />,
+    }
+  },
+   {
+    id: 'regional-analytics', // Add a unique ID
+    title: 'Regional Analytics Dashboard',
+    icon: 'map',
+    description: 'How officers get a macro-level view of their jurisdiction for regional planning.',
+    modalContent: {
+      type: 'component', // 2. ADD THE COMPONENT TO THE MODAL
+      component: <RegionalAnalyticsFlowchart />,
+    }
+  },
+  {
+    id: 'scheme-and-alerts', // Add a unique ID
+    title: 'Scheme & Alert System',
+    icon: 'megaphone',
+    description: 'The integrated workflow for managing schemes and broadcasting alerts to farmers.',
+    modalContent: {
+      type: 'component', // 2. ADD THE COMPONENT TO THE MODAL
+      component: <SchemeAndAlerts />,
     }
   },
 ];

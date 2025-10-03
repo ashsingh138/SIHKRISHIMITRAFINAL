@@ -684,3 +684,23 @@ html {
 .companion-card.is-visible .companion-timeline-dot {
   border-color: #4f46e5; /* indigo-600 */
 }
+
+/* Add this to src/index.css */
+
+/* --- Styles for Query Management Flowchart --- */
+.query-flow-card {
+    background-color: white;
+    border: 1px solid #e2e8f0; /* slate-200 */
+    position: relative;
+}
+
+.connector-line-vertical {
+    width: 2px;
+    background-color: #cbd5e1; /* slate-300 */
+    margin: 1rem auto;
+}
+
+.connector-line-horizontal {
+    height: 2px;
+    background-color: #cbd5e1; /* slate-300 */
+}
