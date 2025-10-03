@@ -4,7 +4,7 @@ import Icon from '../components/Icon';
 import videoFile from "../assets/85897-591840755_small.mp4";
 import sihLogo from "../assets/sih_logo.jpeg"; 
 import iitkgpLogo from "../assets/iitkgp_logo.png"; 
-import projectLogo from "../assets/krishiMitra_logo.png";
+import projectLogo from "../assets/KrishiMitra_logo.png";
 
 // --- UPDATED: Multi-Stage "Data Fusion" Preloader ---
 const Preloader = () => {
