@@ -15,7 +15,7 @@ import TechStackDetails from '../components/solutionslogic/TechStackDetails'; //
 import VisualAssets from '../components/solutionslogic/VisualAssets'; 
 import DigitalCompanion from '../components/solutionslogic/DigitalCompanion'; // NEW: Import Digital Companion
 import ServicesFlow from '../components/solutionslogic/ServicesFlow'; // NEW: Import Services Flow
-import QueryManagementFlowchart from '../components/solutionslogic/QueryManagementFlowChart'; // NEW: Import Query Management Flowchart
+import QueryManagementFlowchart from '../components/solutionslogic/QueryManagementFlowchart'; // NEW: Import Query Management Flowchart
 import OutbreakMonitoring from '../components/solutionslogic/OutbreakMonitoring'; // NEW: Import Outbreak Monitoring
 import RegionalAnalyticsFlowchart from '../components/solutionslogic/RegionalAnalyticsFlowchart'; // NEW: Import Regional Analytics Flowchart
 import SchemeAndAlerts from '../components/solutionslogic/SchemeAndAlerts'; // NEW: Import Scheme and Alerts Flowchart
