@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layers, BrainCircuit, Share2, ShieldCheck, WifiOff, Ear, Users, Check, X } from 'lucide-react';
+// ✅ FIXED: Added all necessary icons to the import list
+import { 
+    Layers, BrainCircuit, Share2, ShieldCheck, WifiOff, Ear, Users, Check, X, 
+    Database, UserCheck, RefreshCw, Server, HardDrive, Cpu, Scaling 
+} from 'lucide-react';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,7 +72,28 @@ const OurApproachTab = () => {
                     </div>
                 </motion.section>
 
-                {/* --- Section 2: Addressing Key Challenges --- */}
+                {/* --- Section 2: Data Strategy & Feedback Loop --- */}
+                <motion.section variants={containerVariants}>
+                    <SectionHeader title="Data Strategy & The Feedback Loop" subtitle="Our system is designed to get smarter and more accurate with every interaction." />
+                     <div className="grid md:grid-cols-3 gap-6">
+                        <ChallengeSolutionCard icon={Database} title="Multi-Source Ingestion" solution="We fuse diverse data types—farmer inputs, satellite imagery, and real-time APIs—to create a comprehensive 'digital twin' of the farm." color={{ border: 'border-green-500', text: 'text-green-500' }} />
+                        <ChallengeSolutionCard icon={UserCheck} title="Human-in-the-Loop Verification" solution="When the AI's confidence is low, queries are escalated to a human officer whose verified answer becomes high-quality training data." color={{ border: 'border-blue-500', text: 'text-blue-500' }} />
+                        <ChallengeSolutionCard icon={RefreshCw} title="The Virtuous Cycle" solution="All verified data is fed back into our pipeline to continuously retrain the models, creating a system that gets smarter over time." color={{ border: 'border-purple-500', text: 'text-purple-500' }} />
+                     </div>
+                </motion.section>
+
+                {/* --- Feasibility Check Section --- */}
+                <motion.section variants={containerVariants}>
+                    <SectionHeader title="Feasibility Check" subtitle="Our architecture is built on proven, accessible, and cost-effective technologies." />
+                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                        <div className="bg-white p-6 rounded-xl shadow-lg border"><Server className="mx-auto w-10 h-10 text-green-500 mb-2"/><h4 className="font-semibold">System Architecture</h4><p className="text-sm text-slate-500">A microservices architecture on the cloud allows for independent scaling and high availability.</p></div>
+                        <div className="bg-white p-6 rounded-xl shadow-lg border"><HardDrive className="mx-auto w-10 h-10 text-blue-500 mb-2"/><h4 className="font-semibold">Data Sources</h4><p className="text-sm text-slate-500">We leverage free, open-source government data (Agmarknet, Bhuvan) and proven APIs.</p></div>
+                        <div className="bg-white p-6 rounded-xl shadow-lg border"><Cpu className="mx-auto w-10 h-10 text-purple-500 mb-2"/><h4 className="font-semibold">Model Feasibility</h4><p className="text-sm text-slate-500">Our AI models (CNN, LSTM) are standard, well-documented, and proven for agricultural datasets.</p></div>
+                        <div className="bg-white p-6 rounded-xl shadow-lg border"><Scaling className="mx-auto w-10 h-10 text-orange-500 mb-2"/><h4 className="font-semibold">Low Cost to Scale</h4><p className="text-sm text-slate-500">The use of open-source frameworks and a mobile-first approach keeps operational costs low.</p></div>
+                     </div>
+                </motion.section>
+
+                {/* --- Section 4: Addressing Key Challenges --- */}
                 <motion.section variants={containerVariants}>
                     <SectionHeader title="Our Strategic Approach" subtitle="We designed our solution to overcome the most critical real-world challenges faced by Indian farmers." />
                     <div className="grid md:grid-cols-3 gap-6">
@@ -78,7 +103,7 @@ const OurApproachTab = () => {
                     </div>
                 </motion.section>
 
-                {/* --- Section 3: Competitive Landscape --- */}
+                {/* --- Section 5: Competitive Landscape --- */}
                 <motion.section variants={itemVariants}>
                     <SectionHeader title="Competitive Landscape" subtitle="How Krishi Mitra stands apart from existing alternatives." />
                     <div className="bg-white p-4 rounded-xl shadow-lg border overflow-x-auto">
