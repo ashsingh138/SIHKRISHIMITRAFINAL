@@ -645,3 +645,42 @@ html {
   background-size: 400% 400%;
   animation: aurora-background 15s ease-in-out infinite;
 }
+
+/* Add this to src/index.css */
+
+/* --- Styles for Digital Companion Flowchart --- */
+.companion-card {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.companion-card.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.companion-timeline {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background-color: #e2e8f0; /* slate-200 */
+}
+
+.companion-timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 4px solid #94a3b8; /* slate-400 */
+  border-radius: 9999px;
+  z-index: 10;
+  transition: border-color 0.3s;
+}
+
+.companion-card.is-visible .companion-timeline-dot {
+  border-color: #4f46e5; /* indigo-600 */
+}

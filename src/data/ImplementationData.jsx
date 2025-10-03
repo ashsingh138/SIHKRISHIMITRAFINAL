@@ -13,6 +13,8 @@ import SoilWeatherIntelligence from '../components/solutionslogic/SoilWeatherInt
 import QueryBotFlowchart from '../components/solutionslogic/QueryBotFlowChart';
 import TechStackDetails from '../components/solutionslogic/TechStackDetails'; // NEW: Import Tech Stack
 import VisualAssets from '../components/solutionslogic/VisualAssets'; 
+import DigitalCompanion from '../components/solutionslogic/DigitalCompanion'; // NEW: Import Digital Companion
+import ServicesFlow from '../components/solutionslogic/ServicesFlow'; // NEW: Import Services Flow
 export const interactiveFlowsData = [
   {
     id: 'crop-advisory',
@@ -76,6 +78,26 @@ export const interactiveFlowsData = [
     icon: 'award',
     description: 'Interactive flowchart detailing our system for encouraging sustainable practices.',
     modalContent: { type: 'component', component: <GamificationFlowchart /> }
+  },
+  {
+    id: 'digital-companion', // Add a unique ID
+    title: 'Digital Farm Companion',
+    icon: 'book-open',
+    description: 'An intelligent logbook that learns from farmer activities to provide proactive advice.',
+    modalContent: {
+      type: 'component', // 2. UPDATE THE MODAL CONTENT
+      component: <DigitalCompanion />,
+    }
+  },
+   {
+    id: 'supporting-services', // Add a unique ID
+    title: 'Supporting Services',
+    icon: 'wrench', // A fitting icon
+    description: 'A flowchart explaining the implementation of alerts, multilingual support, and video hosting.',
+    modalContent: {
+      type: 'component', // 2. UPDATE THE MODAL CONTENT
+      component: <ServicesFlow />,
+    }
   },
 ];
 
