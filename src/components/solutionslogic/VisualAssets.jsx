@@ -88,7 +88,7 @@ const assetData = [
     type: 'pdf',
     title: 'Market Price Prediction - Full Report',
     description: 'Detailed analysis and architecture of our market price forecasting model (ARIMA, LSTM, SVR, etc.)',
-    src: '/images/architecture/Marketpriceprediction.pdf' // Make sure this file is inside /public/images/architecture/
+    src: 'https://drive.google.com/file/d/1cNAHuVTWfvSAq4GKj2y0hS8r8EOfWFSQ/preview' // Make sure this file is inside /public/images/architecture/
   },
 
   // Spectral Analysis
@@ -131,6 +131,39 @@ const assetData = [
     title: 'Pest / Disease Detection',
     src: '/images/architecture/pest2.jpg'
   },
+  {
+    type: 'image',
+    title: 'Pest / Disease Detection',
+    src: '/images/architecture/Pest3.jpg'
+  },
+  {
+    type: 'pdf',
+    title: 'Pest/Disease Detection -  Report',
+    description: 'Detailed analysis and architecture of Pest/Disease Detection Model( RTR_Lite_MobileNetV2,CNN etc) ',
+    src: '/images/architecture/Pest4.pdf' // Make sure this file is inside /public/images/architecture/
+  },
+  {
+    type: 'pdf',
+    title: 'Pest/Disease Detection -RTR_Lite_MobileNetV2 Report',
+    description: 'Detailed analysis and architecture of Pest/Disease Detection Model( RTR_Lite_MobileNetV2) ',
+    src: 'https://drive.google.com/file/d/1BeZl-hzSceeW_o5s0qG35iVL4oNjlkB-/preview' // Make sure this file is inside /public/images/architecture/
+  },
+  {
+    type: 'image',
+    title: 'Pest / Disease Detection-Models Comparison',
+    src: '/images/architecture/Pest5.png'
+  },
+  {
+    type: 'image',
+    title: 'Pest / Disease Detection-Models Comparison',
+    src: '/images/architecture/Pest6.png'
+  },
+  {
+    type: 'image',
+    title: 'Pest / Disease Detection-Models Comparison',
+    src: '/images/architecture/Pest7.png'
+  },
+
 
   // Table: AI Model Results
   {
