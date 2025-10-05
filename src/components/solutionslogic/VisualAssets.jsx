@@ -42,6 +42,46 @@ const assetData = [
     title: 'Market Price Prediction',
     src: '/images/architecture/Marketprice1.png'
   },
+  {
+    type: 'image',
+    title: 'Market Price Prediction-RNN Model',
+    src: '/images/architecture/Price1.png'
+  },
+  {
+    type: 'image',
+    title: 'Market Price Prediction-Neural Network',
+    src: '/images/architecture/Price2.png'
+  },
+  {
+    type: 'image',
+    title: 'Market Price Prediction-LSTM Model',
+    src: '/images/architecture/Price3.png'
+  },
+  {
+    type: 'image',
+    title: 'Market Price Prediction-Echo State Network',
+    src: '/images/architecture/Price4.png'
+  },
+  {
+    type: 'image',
+    title: 'Market Price Prediction-GRU Model',
+    src: '/images/architecture/Price5.png'
+  },
+  {
+    type: 'image',
+    title: 'Market Price Prediction-RMSE of Models',
+    src: '/images/architecture/Price6.png'
+  },
+  {
+    type: 'image',
+    title: 'Market Price Prediction-RNMSE of Models',
+    src: '/images/architecture/Price7.png'
+  },
+  {
+    type: 'image',
+    title: 'Market Price Prediction-MAE of Models',
+    src: '/images/architecture/Price8.png'
+  },
 
   // ✅ PDF embedded inline (no new tab)
   {
@@ -73,6 +113,16 @@ const assetData = [
     type: 'image',
     title: 'Crop Advisory',
     src: '/images/architecture/Crophealth1.png'
+  },
+  {
+    type: 'image',
+    title: 'Crop Advisory',
+    src: '/images/architecture/Cropadvisory1.png'
+  },
+  {
+    type: 'image',
+    title: 'Crop Advisory',
+    src: '/images/architecture/Cropadvisory2.png'
   },
 
   // Pest/Disease
