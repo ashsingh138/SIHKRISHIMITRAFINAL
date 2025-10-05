@@ -47,7 +47,7 @@ const ResourcesTab = () => {
 
                      <ResourceSection title="Yield & Market Price Prediction">
                         <ResourceLink href="https://link.springer.com/article/10.1007/s10666-024-09978-6">Crop Yield Prediction in Agriculture</ResourceLink>
-                         <ResourceLink href="https://onlinelibrary.wiley.com/doi/10.1002/agg.3382">Forecasting Spot Prices with Deep Learning (Wiley)</ResourceLink>
+                         <ResourceLink href="https://onlinelibrary.wiley.com/doi/full/10.1002/isaf.1487">Forecasting Spot Prices with Deep Learning (Wiley)</ResourceLink>
                          <ResourceLink href="https://farmonaut.com/blogs/price-forecasting-of-agricultural-commodities-shocking-new-tech">Methodologies for Price Forecasting</ResourceLink>
                     </ResourceSection>
                 </div>
