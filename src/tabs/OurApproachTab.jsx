@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// ✅ FIXED: Added all necessary icons to the import list
 import { 
     Layers, BrainCircuit, Share2, ShieldCheck, WifiOff, Ear, Users, Check, X, 
-    Database, UserCheck, RefreshCw, Server, HardDrive, Cpu, Scaling 
+    Database, UserCheck, RefreshCw, Server, HardDrive, Cpu, Scaling, Flag, Rocket, Zap,
+    Send
 } from 'lucide-react';
 
 const containerVariants = {
@@ -44,6 +44,37 @@ const ChallengeSolutionCard = ({ icon: Icon, title, solution, color }) => (
     </div>
 );
 
+const PhaseCard = ({ icon: Icon, phase, title, farmerFeatures, officerFeatures, color }) => (
+    <motion.div variants={itemVariants} className="relative pl-12 pb-12 last:pb-0">
+        <div className="absolute top-10 left-[22px] -bottom-6 w-1 bg-slate-200 last:hidden"></div>
+        
+        <div className={`absolute top-0 left-0 w-12 h-12 rounded-full flex items-center justify-center ${color.bg} border-4 border-slate-50`}>
+            <Icon className={`w-6 h-6 ${color.text}`} />
+        </div>
+        
+        <div className="ml-4">
+            <p className={`text-sm font-semibold ${color.text}`}>{phase}</p>
+            <h4 className="font-bold text-xl text-slate-800 mb-3">{title}</h4>
+            
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                <div>
+                    <h5 className="font-semibold text-slate-700 mb-2">For Farmers (KisanSathi App)</h5>
+                    <ul className="space-y-1 text-slate-600 text-sm list-disc list-inside">
+                        {farmerFeatures.map((feature, i) => <li key={i}>{feature}</li>)}
+                    </ul>
+                </div>
+                <div>
+                    <h5 className="font-semibold text-slate-700 mb-2">For Officers (KrishiAdhikari Dashboard)</h5>
+                    <ul className="space-y-1 text-slate-600 text-sm list-disc list-inside">
+                        {officerFeatures.map((feature, i) => <li key={i}>{feature}</li>)}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </motion.div>
+);
+
+
 const OurApproachTab = () => {
     return (
         <div className="p-8 md:p-12 bg-slate-50">
@@ -52,16 +83,15 @@ const OurApproachTab = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.05 }}
-                className="space-y-20 max-w-7xl mx-auto"
+                className="space-y-24 max-w-7xl mx-auto"
             >
                 <motion.header variants={itemVariants} className="text-center">
                     <h2 className="text-4xl font-bold animated-gradient-text">Our Approach & Rationale</h2>
                     <p className="text-slate-600 max-w-3xl mx-auto mt-4 text-xl">
-                        Justifying the key technical and strategic decisions that make Krishi Mitra a robust and impactful solution.
+                        Justifying the key technical and strategic decisions that make KisanSathi a robust and impactful solution.
                     </p>
                 </motion.header>
 
-                {/* --- Section 1: Technical Choices --- */}
                 <motion.section variants={containerVariants}>
                     <SectionHeader title="Our Technical Choices" subtitle="Why we chose this specific stack for performance, scalability, and ease of development." />
                     <div className="grid md:grid-cols-2 gap-8">
@@ -72,28 +102,107 @@ const OurApproachTab = () => {
                     </div>
                 </motion.section>
 
-                {/* --- Section 2: Data Strategy & Feedback Loop --- */}
+                {/* --- (UPDATED) Section 2: MVP Roadmap now includes Officer features --- */}
+                <motion.section variants={containerVariants}>
+                    <SectionHeader 
+                        title="From MVP to Full-Scale" 
+                        subtitle="Our implementation is phased to deliver value to both farmers and officers, creating a complete ecosystem."
+                    />
+                    <div className="bg-white p-8 rounded-xl shadow-lg border">
+                        <div className="relative">
+                            <PhaseCard
+                                icon={Flag}
+                                phase="Phase 1: Minimum Viable Product (MVP)"
+                                title="Core Advisory Platform"
+                                farmerFeatures={[
+                                    "User Registration & Farm Profiling",
+                                    "Multilingual App with Voice Support for accessibility",
+                                    "AI-Powered Pest/Disease Detection via image uploads",
+                                    "AI-based Soil Health recommendations & crop, irrigation, fertilizer advisory",
+                                    "Real-time, weather-based alerts and insights",
+                                    "Market Price Tracking for local mandis",
+                                     "AI Query Bot with escalation to human officers",
+                                    "In-app feedback collection system for continuous improvement",
+                                    "Automated Yield & Price Prediction Models",
+                                ]}
+                                officerFeatures={[
+                                    "Escalated Query Resolution (Sorted by Urgency)",
+                                    "Dashboard to view farmer-submitted data",
+                                    "Manual push of Scheme & Policy Updates",
+                                    "Proactive Outbreak Monitoring (Heatmaps)",
+                                     "Regional Soil & Weather Analytics",
+                                ]}
+                                color={{ bg: 'bg-green-100', text: 'text-green-600' }}
+                            />
+                             <PhaseCard
+                                icon={Zap}
+                                phase="Phase 2: Enhancement & Engagement"
+                                title="Proactive Monitoring & Community"
+                                farmerFeatures={[
+                                    
+                                    
+                                   
+                                   "Gamified Sustainability Missions to encourage adoption",
+                                    "Community Support forums for peer-to-peer help",
+                                    "Offline-First functionality for core features",
+                                    "Enhanced AI Bot with NLP for natural conversations",
+                                    "In-app tutorials & educational content",
+                                    "Push Notifications for timely alerts",
+                                ]}
+                                officerFeatures={[
+                                    
+                                   
+                                    "Feedback & Analytics on farmer adoption",
+                                    "Community Moderation Tools",
+                                    "Offline Data Sync for officers",
+                                    "Send notifications & alerts to farmers via SMS/WhatsApp, push notifications",
+
+
+                                ]}
+                                color={{ bg: 'bg-blue-100', text: 'text-blue-600' }}
+                            />
+                            <PhaseCard
+                                icon={Rocket}
+                                phase="Phase 3: Full-Scale Ecosystem"
+                                title="Supply Chain & Advanced AI"
+                                farmerFeatures={[
+                                    "Blockchain-based Supply Chain for full traceability",
+                                    "QR Code generation and tracking for produce",
+                                    "Advanced Spectral Crop Health analysis (Satellite Data)",
+                                    "Full integration with Dealer & Mandi portals"
+
+                                ]}
+                                officerFeatures={[
+                                    "Full Blockchain Oversight & Fraud Detection",
+                                    "Advanced Farmer Adoption Analytics",
+                                    "Integration with external stakeholder dashboards",
+
+                                ]}
+                                color={{ bg: 'bg-indigo-100', text: 'text-indigo-600' }}
+                            />
+                        </div>
+                    </div>
+                </motion.section>
+
                 <motion.section variants={containerVariants}>
                     <SectionHeader title="Data Strategy & The Feedback Loop" subtitle="Our system is designed to get smarter and more accurate with every interaction." />
-                     <div className="grid md:grid-cols-3 gap-6">
-                        <ChallengeSolutionCard icon={Database} title="Multi-Source Ingestion" solution="We fuse diverse data types—farmer inputs, satellite imagery, and real-time APIs—to create a comprehensive 'digital twin' of the farm." color={{ border: 'border-green-500', text: 'text-green-500' }} />
-                        <ChallengeSolutionCard icon={UserCheck} title="Human-in-the-Loop Verification" solution="When the AI's confidence is low, queries are escalated to a human officer whose verified answer becomes high-quality training data." color={{ border: 'border-blue-500', text: 'text-blue-500' }} />
-                        <ChallengeSolutionCard icon={RefreshCw} title="The Virtuous Cycle" solution="All verified data is fed back into our pipeline to continuously retrain the models, creating a system that gets smarter over time." color={{ border: 'border-purple-500', text: 'text-purple-500' }} />
-                     </div>
+                       <div className="grid md:grid-cols-3 gap-6">
+                            <ChallengeSolutionCard icon={Database} title="Multi-Source Ingestion" solution="We fuse diverse data types—farmer inputs, satellite imagery, and real-time APIs—to create a comprehensive 'digital twin' of the farm." color={{ border: 'border-green-500', text: 'text-green-500' }} />
+                            <ChallengeSolutionCard icon={UserCheck} title="Human-in-the-Loop Verification" solution="When the AI's confidence is low, queries are escalated to a human officer whose verified answer becomes high-quality training data." color={{ border: 'border-blue-500', text: 'text-blue-500' }} />
+                            <ChallengeSolutionCard icon={RefreshCw} title="The Virtuous Cycle" solution="All verified data is fed back into our pipeline to continuously retrain the models, creating a system that gets smarter over time." color={{ border: 'border-purple-500', text: 'text-purple-500' }} />
+                       </div>
                 </motion.section>
 
-                {/* --- Feasibility Check Section --- */}
                 <motion.section variants={containerVariants}>
                     <SectionHeader title="Feasibility Check" subtitle="Our architecture is built on proven, accessible, and cost-effective technologies." />
-                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                        <div className="bg-white p-6 rounded-xl shadow-lg border"><Server className="mx-auto w-10 h-10 text-green-500 mb-2"/><h4 className="font-semibold">System Architecture</h4><p className="text-sm text-slate-500">A microservices architecture on the cloud allows for independent scaling and high availability.</p></div>
-                        <div className="bg-white p-6 rounded-xl shadow-lg border"><HardDrive className="mx-auto w-10 h-10 text-blue-500 mb-2"/><h4 className="font-semibold">Data Sources</h4><p className="text-sm text-slate-500">We leverage free, open-source government data (Agmarknet, Bhuvan) and proven APIs.</p></div>
-                        <div className="bg-white p-6 rounded-xl shadow-lg border"><Cpu className="mx-auto w-10 h-10 text-purple-500 mb-2"/><h4 className="font-semibold">Model Feasibility</h4><p className="text-sm text-slate-500">Our AI models (CNN, LSTM) are standard, well-documented, and proven for agricultural datasets.</p></div>
-                        <div className="bg-white p-6 rounded-xl shadow-lg border"><Scaling className="mx-auto w-10 h-10 text-orange-500 mb-2"/><h4 className="font-semibold">Low Cost to Scale</h4><p className="text-sm text-slate-500">The use of open-source frameworks and a mobile-first approach keeps operational costs low.</p></div>
-                     </div>
+                       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                            <div className="bg-white p-6 rounded-xl shadow-lg border"><Server className="mx-auto w-10 h-10 text-green-500 mb-2"/><h4 className="font-semibold">System Architecture</h4><p className="text-sm text-slate-500">A microservices architecture on the cloud allows for independent scaling and high availability.</p></div>
+                            <div className="bg-white p-6 rounded-xl shadow-lg border"><HardDrive className="mx-auto w-10 h-10 text-blue-500 mb-2"/><h4 className="font-semibold">Data Sources</h4><p className="text-sm text-slate-500">We leverage free, open-source government data (Agmarknet, Bhuvan) and proven APIs.</p></div>
+                            <div className="bg-white p-6 rounded-xl shadow-lg border"><Cpu className="mx-auto w-10 h-10 text-purple-500 mb-2"/><h4 className="font-semibold">Model Feasibility</h4><p className="text-sm text-slate-500">Our AI models (CNN, LSTM) are standard, well-documented, and proven for agricultural datasets.</p></div>
+                            <div className="bg-white p-6 rounded-xl shadow-lg border"><Scaling className="mx-auto w-10 h-10 text-orange-500 mb-2"/><h4 className="font-semibold">Low Cost to Scale</h4><p className="text-sm text-slate-500">The use of open-source frameworks and a mobile-first approach keeps operational costs low.</p></div>
+                       </div>
                 </motion.section>
 
-                {/* --- Section 4: Addressing Key Challenges --- */}
                 <motion.section variants={containerVariants}>
                     <SectionHeader title="Our Strategic Approach" subtitle="We designed our solution to overcome the most critical real-world challenges faced by Indian farmers." />
                     <div className="grid md:grid-cols-3 gap-6">
@@ -103,15 +212,14 @@ const OurApproachTab = () => {
                     </div>
                 </motion.section>
 
-                {/* --- Section 5: Competitive Landscape --- */}
                 <motion.section variants={itemVariants}>
-                    <SectionHeader title="Competitive Landscape" subtitle="How Krishi Mitra stands apart from existing alternatives." />
+                    <SectionHeader title="Competitive Landscape" subtitle="How KisanSathi stands apart from existing alternatives." />
                     <div className="bg-white p-4 rounded-xl shadow-lg border overflow-x-auto">
-                        <table className="w-full text-left">
+                        <table className="w-full text-left min-w-[600px]">
                             <thead className="bg-slate-50 text-sm">
                                 <tr>
                                     <th className="p-3 font-semibold text-slate-700">Feature</th>
-                                    <th className="p-3 font-semibold text-center text-indigo-600">Krishi Mitra</th>
+                                    <th className="p-3 font-semibold text-center text-indigo-600">KisanSathi</th>
                                     <th className="p-3 font-semibold text-center">Basic Agri-Apps</th>
                                     <th className="p-3 font-semibold text-center">Traditional Methods</th>
                                 </tr>
